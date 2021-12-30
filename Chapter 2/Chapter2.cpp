@@ -1,5 +1,4 @@
 #include <iostream>
-#include "ExampleHeader.h"
 
 int main()
 {
@@ -169,22 +168,42 @@ int main()
 	(d) const int* const p3;    //same as 2
 	(e) const int* p;			 //this is allowed
 
-
 	//Section 2.29
 	Using the variables in the previous exercise, which of the
 	following assignments are legal ? Explain why.
 	(a)i = ic;        // legal i will equal a const int
-	(b)p1 = p3;		  // legal pointer to equal const pointer	
-	(c)p1 = &ic;	  // legal p1 gets address of const int ic
-	(d)p3 = &ic;	  // legal const pointer will equal address of const int ic
-	(e)p2 = p1;		  // legal const pointer p2 will point to const int p1
-	(f)ic = *p3;      // illegal 
+	(b)p1 = p3;		  // illegal because the type of int is different in both pointers	
+	(c)p1 = &ic;	  // illegal you cannot put the address of a const into into a pointer that refers to a modifiable int
+	(d)p3 = &ic;	  // illegal you cannot assign const pointer when it hasn't properly been initialized but even then you cannot assign if it was properly initialized.
+	(e)p2 = p1;		  // illegal p2 wasn't initialized but you cannot assign to it
+	(f)ic = *p3;      // illegal ic is a const that isn't initialized and can't be assigned
 
+	//Section 2.30
+	const int v2 = 0; int v1 = v2;   //v2 top-level const,v1 nothing
+	int *p1 = &v1, &r1 = v1;		 //p1 no level, r1 no level 
+	const int *p2 = &v2, *const p3 = &i, &r2 = v2;   //p2 low-level, p3 top and low level, r2 low-level
+	
+	//Section 2.31
+	r1 = v2;   legal, references a top-level const int 
+	p1 = p2;   illegal, you cannot copy a low-level const such as p2 without p1 being low-level 
+	p2 = p1;   legal, p1 can be copied into the low-level p2
+	p1 = p3;   illegal, the low-level const of p3 cannot be copied into nonconst p1	
+	p2 = p3;   legal, the low-level const requirement is matched and top-level const is ignored
+	
+	//Section 2.32
+	int null = 0, *p = null; //illegal because p points to an integer value rather than address
+	
+	
 	*/
 
+	int x = 5;
+	int* p1 = &x;
+	const int* p2 = p1;
+	std::cout << p2 << std::endl;
+	x++;
+	std::cout << p2 << std::endl;
+	std::cout << *p2 << std::endl;
+	int null = 0, * p = null;
 	
-	
-
-
 
 }

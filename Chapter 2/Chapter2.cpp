@@ -193,17 +193,17 @@ int main()
 	//Section 2.32
 	int null = 0, *p = null; //illegal because p points to an integer value rather than address
 	
+	//Section 2.33
+	
 	
 	*/
 
-	int x = 5;
-	int* p1 = &x;
-	const int* p2 = p1;
-	std::cout << p2 << std::endl;
-	x++;
-	std::cout << p2 << std::endl;
-	std::cout << *p2 << std::endl;
-	int null = 0, * p = null;
+	int i = 0, & r = i;
+	auto a = r;
+	a = 42;
+
+	
+	std::cout << a << std::endl;
 	
 
 }

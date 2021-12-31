@@ -194,16 +194,45 @@ int main()
 	int null = 0, *p = null; //illegal because p points to an integer value rather than address
 	
 	//Section 2.33
+	int i = 0, & r = i;
+	auto a = r;
+	a = 42; a is an int set to 42, and i remains 0
 	
-	
+	int i = 0, & r = i;
+	const int ci = i, &cr = ci;
+	auto b = ci;
+	b = 42; b is an int set to 42, and ci = 0;
+
+	int i = 0, & r = i;
+	const int ci = i, & cr = ci;
+	auto c = cr;
+	c = 42;  c is an int set to 42, cr = 0;
+
+	int i = 0, & r = i;
+	const int ci = i, & cr = ci;
+	auto d = &i;
+	d = 42;  illegal, d is an int* pointer, which contain a memory address and not a value of type int.
+
+	int i = 0, & r = i;
+	const int ci = i, & cr = ci;
+	auto e = &ci;
+	e = 42;   illegal, e is a const int * pointer, which cannot be assigned a value of int;
+
+	int i = 0, & r = i;
+	const int ci = i, & cr = ci;
+	auto& g = ci;
+	g = 42;   illegal, g is a const int reference and it cannot be assigned after it is initialized.
+
+
 	*/
 
 	int i = 0, & r = i;
-	auto a = r;
-	a = 42;
+	const int ci = i, & cr = ci;
+	auto b = ci;
+	b = 42;
 
 	
-	std::cout << a << std::endl;
+	std::cout << b << " " << ci << std::endl;
 	
 
 }

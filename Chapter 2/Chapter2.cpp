@@ -223,16 +223,92 @@ int main()
 	auto& g = ci;
 	g = 42;   illegal, g is a const int reference and it cannot be assigned after it is initialized.
 
-
-	*/
+	//Section 2.34
 
 	int i = 0, & r = i;
+	auto a = r;
+	std::cout << "a is " << a << "\ni is " << i << "\nr is " << r << std::endl;
 	const int ci = i, & cr = ci;
 	auto b = ci;
-	b = 42;
+	auto c = cr;
+	auto d = &i;
+	auto e = &ci;
+	std::cout << "ci is " << ci << "\ncr is " << cr << "\nb is " << b << std::endl;
+	std::cout << "cc is " << c << "\nd is " << d << "\ne is " << e << std::endl;
+	std::cout << "*d is " << *d << "\n*e is " << *e << std::endl;
+	const auto f = ci;
+	auto& g = ci;
+	//auto& h = 42;
+	const auto& j = 42;
+	std::cout << "f is " << f << "\ng is " << g << "\nj is " << j << std::endl;
+	a = 42; b = 42; c = 42;
+	std::cout << "a is " << a << "\nb is " << b << "\nc is " << c << std::endl;
+	// d = 42; e = 42; g = 42; all 3 have errors
 
+	//Section 2.35
+
+	const int i = 42;  //const int
+	auto j = i;        //int
+	std::cout << "j is " << j << std::endl;
+	const auto& k = i; // const int &
+	auto* p = &i;      // const int *
+	const auto j2 = i, & k2 = i; //j2 const int, references cannot be top-level so k2 is just a reference to a const
+
+	//Section 2.36
+	int a = 3, b = 4;   //a,b are ints
+	decltype(a) c = a;  //c is initialized int
+	decltype((b)) d = a; //d has type int& bound to a
+	++c;                 // c is int of 4
+	++d;                 // a is 4 
+		
+	//Section 2.37
+	int a = 3, b = 4;     //a,b are ints
+	decltype(a) c = a;    //c is an int, c = 3
+	decltype(a = b) d = a; //d is an int& bound to a, d = 3
+	std::cout << "a is " << a << "\nb is " << b << "\nc is " << c << std::endl;
+	std::cout << "d is " << d;
 	
-	std::cout << b << " " << ci << std::endl;
+	//Section 2.38
+    
+	Describe the differences in type deduction between
+	decltypeand auto.Give an example of an expression where autoand
+	decltype will deduce the same type and an example where they will deduce
+	differing types.
+
+	Answer: decltype will keep top level const when the expression refers
+	to a top level const.Auto does not keep top - level const.
+	Also, decltype allows the use of parenthesis to alter the analysis of
+	the expression.
+
+	Example of where auto and decyltype deduce the same types
+	const int i = 4;
+	auto x = &i;
+	decltype (&i) x = &i;
+	// using either auto or decltype deduction gives a const int* bound to i
+
+	Example of where auto and decyltype deduce different types
+	const int i = 3; 
+	auto x = i;
+	decltype (i) i2 = i;
+
+	// using auto deduction, the top-level const is ignored from i and x is just an int
+	// whereas the decltype i2 is a const int even with the same expression with i.
+
+	//Section 2.39
+	struct Foo { * empty * } // Note: no semicolon will highlight int red with ; expected
+	int main()
+	{
+		return 0;
+	}
 	
+	//Section 2.40
+	struct Sales_data{
+		std::string bookNo;
+		std::string customerName;
+		unsigned units_sold = 0; 
+		double revenue = 0.0;
+	}
+	*/
+
 
 }

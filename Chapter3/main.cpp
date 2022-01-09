@@ -52,7 +52,7 @@ int main() {
 		cout << ((word1.size() > word2.size())
 			? "Word 1 is bigger"
 			: "Word 2 is bigger") << std::endl
-*/
+
 //Section 3.5
 int main() {
 	string word1, word2;
@@ -60,9 +60,26 @@ int main() {
 		if (word2.empty())
 			word2 = word1;
 		else
-			word2 = word2 + " " + word1;
+		word2 = word2 + " " + word1;
 	}
 	std::cout << word2 << std::endl;
 }
+
+
+
+//Section 3.6
+Use a range for to change all the characters in a string to
+X.
+
+int main() {
+	string s;
+	std::cin >> s;
+	decltype(s.size()) index = 0;
+	for (auto& c : s) // for every char in s
+		c = 'X';
+	cout << s << endl;
+	}
+*/
+
 
 

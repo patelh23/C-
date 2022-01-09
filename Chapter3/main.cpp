@@ -39,7 +39,7 @@ int main()
 //Section 3.3
 White spaces end the string input
 In the getLine function, it will collect all the spaces
-*/
+
 
 //Section 3.4
 int main() {
@@ -51,5 +51,18 @@ int main() {
 	else
 		cout << ((word1.size() > word2.size())
 			? "Word 1 is bigger"
-			: "Word 2 is bigger") << std::endl;
+			: "Word 2 is bigger") << std::endl
+*/
+//Section 3.5
+int main() {
+	string word1, word2;
+	while (std::cin >> word1) {
+		if (word2.empty())
+			word2 = word1;
+		else
+			word2 = word2 + " " + word1;
+	}
+	std::cout << word2 << std::endl;
 }
+
+

@@ -75,11 +75,19 @@ int main() {
 	string s;
 	std::cin >> s;
 	decltype(s.size()) index = 0;
-	for (auto& c : s) // for every char in s
+	for (auto &c : s) // for every char in s
 		c = 'X';
 	cout << s << endl;
-	}
+}
 */
-
-
-
+//Section 3.7
+int main() {
+	string s;
+	std::cin >> s;
+	decltype(s.size()) index = 0;
+	for (char& c : s) // for every char in s
+		c = 'X';
+	cout << s << endl;
+}
+// It still works using a char reference. However, if it is nonreference char, then
+// the string will not be transformed to Xs

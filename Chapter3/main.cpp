@@ -79,15 +79,46 @@ int main() {
 		c = 'X';
 	cout << s << endl;
 }
-*/
+
 //Section 3.7
 int main() {
-	string s;
-	std::cin >> s;
-	decltype(s.size()) index = 0;
-	for (char& c : s) // for every char in s
-		c = 'X';
-	cout << s << endl;
+	std::string s;
+	if (std::cin >> s) {
+		for (char c : s)
+			c = 'X';  // will not change s
+	}
+	std::cout << s << std::endl;
+	return 0;
 }
 // It still works using a char reference. However, if it is nonreference char, then
 // the string will not be transformed to Xs
+
+//Section 3.8
+
+int main() {
+	std::string s;
+	if (std::cin >> s) {
+		int index = 0;
+		while (index < s.size()) {
+			std::cout << 'X';
+			++index;
+		}
+	}
+
+//Section 3.9
+int main (){
+	string s = "howareyou";
+	cout << s[0] << endl;
+	//The following program prints out the first letter of the string.
+	//Yes, it is valid.
+*/
+//Solution 3.10
+int main() {
+	string s;
+	std::cin >> s;
+	for (const auto& c : s) {
+		if (!ispunct(c))
+			std::cout << c;
+
+	}
+}

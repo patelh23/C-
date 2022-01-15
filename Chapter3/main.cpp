@@ -145,6 +145,7 @@ int main() {
 		std::cout << c;
 	}
 }
+//Exercise 3.13
 (a)vector<int> v1;               //empty vector with no values
 (b)vector<int> v2(10);			  //vector with 10 elements, all at 0. 0000000000
 (c)vector<int> v3(10, 42);       //vector with 10 elements, all at 42
@@ -153,12 +154,5 @@ int main() {
 (f)vector<string> v6{ 10 };        //vector with 10 elements, empty string
 (g)vector<string> v7{ 10, "hi" };  //vector with 10 elements, "hi" string
 
-//Exercise 3.13
-int main() {
 
-	vector<int> v4{ 10,42 };
-	for (auto& c : v4) {
-		std::cout << c;
-	}
-}
 */

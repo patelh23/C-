@@ -150,8 +150,8 @@ int main() {
 (c)vector<int> v3(10, 42);       //vector with 10 elements, all at 42
 (d)vector<int> v4{ 10 };			  //vector with 1 element, value of 10
 (e)vector<int> v5{ 10, 42 };       //vector with 2 elements, value of 42
-(f)vector<string> v6{ 10 };
-(g)vector<string> v7{ 10, "hi" };
+(f)vector<string> v6{ 10 };        //vector with 10 elements, empty string
+(g)vector<string> v7{ 10, "hi" };  //vector with 10 elements, "hi" string
 
 //Exercise 3.13
 int main() {

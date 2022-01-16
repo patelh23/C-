@@ -146,13 +146,35 @@ int main() {
 	}
 }
 //Exercise 3.13
-(a)vector<int> v1;               //empty vector with no values
-(b)vector<int> v2(10);			  //vector with 10 elements, all at 0. 0000000000
-(c)vector<int> v3(10, 42);       //vector with 10 elements, all at 42
-(d)vector<int> v4{ 10 };			  //vector with 1 element, value of 10
-(e)vector<int> v5{ 10, 42 };       //vector with 2 elements, value of 42
-(f)vector<string> v6{ 10 };        //vector with 10 elements, empty string
-(g)vector<string> v7{ 10, "hi" };  //vector with 10 elements, "hi" string
+(a) vector<int> v1;               //empty vector with no values
+(b) vector<int> v2(10);			  //vector with 10 elements, all at 0. 0000000000
+(c) vector<int> v3(10, 42);       //vector with 10 elements, all at 42
+(d) vector<int> v4{10};			  //vector with 1 element, value of 10
+(e) vector<int> v5{10, 42};       //vector with 2 elements, value of 42
+(f) vector<string> v6{10};        //vector with 10 elements with empty string
+(g) vector<string> v7{10, "hi"};  //vector with 10 elements with "hi"
 
 
+//Exercise 3.14
+int main() {
+	vector<int> v2; // empty vector
+	int input;
+	while (std::cin >> input) {
+		v2.push_back(input);
+	}
+	for (auto& c : v2)
+		std::cout << c;
+
+}
 */
+//Exercise 3.15
+int main() {
+	vector<string> v2; // empty vector
+	string input;
+	while (std::cin >> input) {
+		v2.push_back(input);
+	}
+	for (auto& c : v2)
+		std::cout << c;
+
+}

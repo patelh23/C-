@@ -169,12 +169,12 @@ int main() {
 */
 //Exercise 3.15
 int main() {
-	vector<string> v2; // empty vector
+	vector<string> v2; // empty string vector
 	string input;
 	while (std::cin >> input) {
 		v2.push_back(input);
 	}
 	for (auto& c : v2)
-		std::cout << c;
+		std::cout << c; // to print the vector elements
 
 }

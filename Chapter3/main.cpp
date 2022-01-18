@@ -199,13 +199,38 @@ int main() {
 }
 */
 //Exercise 3.18: Is the following program legal ? If not, how might you fix it ?
-vector<int> ivec(100);
-ivec[0] = 42;   //this is illegal since ivec is an empty vector. But, you also cannot assign a value using subscripting. 
+vector<int> ivec;
+ivec[0] = 42;   //this is illegal since ivec is an empty vector. You can fix by adding (1)
 
 //Exercise 3.19: List three ways to define a vector and give it ten elements,
 //each with the value 42. Indicate whether there is a preferred way to do so
 //and why
+int main() {
+	vector<int> ivec(10, 42);
+	vector<int> ivec{ 42,42,42,42,42,42,42,42,42,42 };
+	vector<int> ivec;
+	for (decltype (ivec.size()) i = 0; i < 10; ++i)
+		ivec.push_back(42);
+	for (auto& c : ivec) {
+		std::cout << c << std::endl;
+	}
+	//the first method involving (10,42) is most concise and preferred.
+}
+*/
+//Exercise 3.20: Read a set of integers into a vector.Print the sum of each
+//pair of adjacent elements.Change your program so that it prints the sum of
+//the first and last elements, followed by the sum of the secondand second - tolast, and so on.
+int main() {
+	vector<int> input;
+	int currentNum, counter, sum;
+	while (std::cin >> currentNum) {
+		input.push_back(currentNum);
+	}
+	for (decltype(input.size()) i = 0; i <= input.size(); ++i)
 
+		sum = input[i];
+	)
+}
 }
 
 }

@@ -177,4 +177,35 @@ int main() {
 	for (auto& c : v2)
 		std::cout << c; // to print the vector elements
 
+//Exercise 3.17
+int main() {
+	string input;
+	int counter;
+	vector<string> v1;
+	while (std::cin >> input) {
+		for (auto& c : input)
+			c = toupper(c);
+		v1.push_back(input);
+
+	}
+	counter = 0;
+	for (auto& word : v1) {
+		std::cout << word << " ";
+		counter += 1;
+		if (counter % 8 == 0) {
+			std::cout << "\n";
+		}
+	}
+}
+*/
+//Exercise 3.18: Is the following program legal ? If not, how might you fix it ?
+vector<int> ivec(100);
+ivec[0] = 42;   //this is illegal since ivec is an empty vector. But, you also cannot assign a value using subscripting. 
+
+//Exercise 3.19: List three ways to define a vector and give it ten elements,
+//each with the value 42. Indicate whether there is a preferred way to do so
+//and why
+
+}
+
 }

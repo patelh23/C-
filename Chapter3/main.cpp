@@ -166,7 +166,7 @@ int main() {
 		std::cout << c;
 
 }
-*/
+
 //Exercise 3.15
 int main() {
 	vector<string> v2; // empty string vector
@@ -176,6 +176,22 @@ int main() {
 	}
 	for (auto& c : v2)
 		std::cout << c; // to print the vector elements
+
+//Exercise 3.16
+int main() {
+	vector<int> v1;               //empty vector with no values
+	vector<int> v2(10);			  //vector with 10 elements, all at 0. 0000000000
+	vector<int> v3(10, 42);       //vector with 10 elements, all at 42
+	vector<int> v4{ 10 };			  //vector with 1 element, value of 10
+	vector<int> v5{ 10, 42 };       //vector with 2 elements, value of 42
+	vector<string> v6{ 10 };        //vector with 10 elements with empty string
+	vector<string> v7{ 10, "hi" };
+
+	for (auto& c : v7) {
+		std::cout << c;
+
+	}
+	std::cout << "  size is: " << v7.size() << std::endl;
 
 //Exercise 3.17
 int main() {
@@ -197,15 +213,21 @@ int main() {
 		}
 	}
 }
-*/
-//Exercise 3.18: Is the following program legal ? If not, how might you fix it ?
-vector<int> ivec;
-ivec[0] = 42;   //this is illegal since ivec is an empty vector. You can fix by adding (1)
 
+//Exercise 3.18: Is the following program legal ? If not, how might you fix it ?
+int main() {
+	vector<int> ivec;
+	ivec[0] = 42;
+
+	for (auto& c : ivec) {
+		std::cout << c << std::endl;
+	}
+	//this is illegal since ivec is an empty vector. You can fix this by declaring ivec a size of 1. iven(1)
+	      
 //Exercise 3.19: List three ways to define a vector and give it ten elements,
 //each with the value 42. Indicate whether there is a preferred way to do so
 //and why
-int main() {
+int main(){
 	vector<int> ivec(10, 42);
 	vector<int> ivec{ 42,42,42,42,42,42,42,42,42,42 };
 	vector<int> ivec;
@@ -214,23 +236,38 @@ int main() {
 	for (auto& c : ivec) {
 		std::cout << c << std::endl;
 	}
-	//the first method involving (10,42) is most concise and preferred.
+//the first method involving (10,42) is most concise and preferred.
 }
-*/
+
 //Exercise 3.20: Read a set of integers into a vector.Print the sum of each
 //pair of adjacent elements.Change your program so that it prints the sum of
 //the first and last elements, followed by the sum of the secondand second - tolast, and so on.
+int main() {
+	vector<int> input;
+	int currentNum,counter,sum;
+	while (std::cin >> currentNum) {
+		input.push_back(currentNum);
+	}
+	for (decltype(input.size()) i = 0; i <= input.size()-1; i = i + 2) {
+		sum = input[i] + input[i + 1];
+		std::cout << sum;
+	}
+}
+
 int main() {
 	vector<int> input;
 	int currentNum, counter, sum;
 	while (std::cin >> currentNum) {
 		input.push_back(currentNum);
 	}
-	for (decltype(input.size()) i = 0; i <= input.size(); ++i)
-
-		sum = input[i];
-	)
+	for (decltype(input.size()) i = 0; i <= ((input.size() - 1)/2); ++i) {
+		sum = input[i] + input[input.size()-1-i];
+		std::cout << sum;
+	}
 }
-}
+*/
+//Exercise 3.21
+int main() {
+	auto b = v.begin(), e = v.end();
 
 }

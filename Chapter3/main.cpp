@@ -275,3 +275,4 @@ int main() {
 		std::cout << *b << std::endl;
 	}
 }
+//Exercise 3.22

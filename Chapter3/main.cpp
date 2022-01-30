@@ -269,10 +269,29 @@ int main() {
 //Exercise 3.21
 int main() {
 
-	vector<int> v{ 1,2,3,4,5,6,7,8,9 };
-	for (auto b = v.begin(); b != v.end(); b++) {
-		*b = *b * *b;
-		std::cout << *b << std::endl;
+	//(a)vector<int> v1;               //empty vector with no values
+	//(b)vector<int> v2(10);			  //vector with 10 elements, all at 0. 0000000000
+	//(c)vector<int> v3(10, 42);       //vector with 10 elements, all at 42
+	//(d)vector<int> v4{ 10 };			  //vector with 1 element, value of 10
+	//(e)vector<int> v5{ 10, 42 };       //vector with 2 elements, value of 42
+	//(f)vector<string> v6{ 10 };        //vector with 10 elements with empty string
+	//(g)vector<string> v7{ 10, "hi" };
+
+	vector<int> v1;
+	std::cout << "The size of v1 is: " << v1.size() << std::endl;
+	for (auto b = v1.begin(); b != v1.end(); b++) {
+		std::cout << " and the value is " << *b;
+	}
+
+	vector<int> v2(10);
+	std::cout << "The size of v2: " << v2.size() << " and the value: ";
+	for (auto b = v2.begin(); b != v2.end(); b++) {
+		std::cout << *b;
+	}
+
+	vector<int> v3(10, 42);
+	std::cout << "\nThe size of v3: " << v3.size() << " and the value: ";
+	for (auto b = v3.begin(); b != v3.end(); b++) {
+		std::cout << *b;
 	}
 }
-//Exercise 3.22

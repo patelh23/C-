@@ -295,3 +295,36 @@ int main() {
 		std::cout << *b;
 	}
 }
+
+//Exercise 3.23
+int main() {
+	vector<int> list1 = { 1,2,3,4,5,6,7,8,9,10 };
+
+	for (auto it = list1.begin(); it != list1.end(); ++it) {
+		*it = 2 * *it;
+		cout << *it << " ";
+	}
+}
+*/
+//Exercise 3.24
+int main() {
+
+	vector<int> input;
+	int currentNum;
+	while (std::cin >> currentNum) {
+		input.push_back(currentNum);
+	}
+	cout << "The vector is:";
+	for (auto i : input)
+		cout << ' ' << i;
+	cout << '\n';
+	//for (auto it = input.begin() + 1; it != input.end(); it++) {
+	//	cout << *it + *(it - 1) << endl;
+	//}
+	auto beg = input.begin();
+	auto end = input.end() - 1;
+	while (beg < end) {
+		cout << *beg++ + *end-- << endl;
+	}
+
+}

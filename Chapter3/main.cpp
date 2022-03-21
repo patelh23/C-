@@ -328,3 +328,29 @@ int main() {
 	}
 
 }
+//Exercise 3.25
+int main() {
+	vector<int> scores(11, 0);
+	int grade;
+	auto beg = scores.begin();
+	while (cin >> grade) {
+		if (grade <= 100) {
+			++* (beg + (grade / 10));
+		}
+	}
+	for (auto i : scores)
+		cout << i;
+}
+//Exercise 3.26
+Because the result of adding two iterators is undefined.
+Subtracting two iterators will give a distance in the form of an integral number.
+* /
+int main() {
+
+	int parr[9] = { 0,2 };
+
+	for (auto i : parr) {
+		cout << " " << i;
+	}
+}
+

@@ -365,12 +365,88 @@ b. this is legal, subscript is a constexpr evaluated at compile - time
 c.illegal, cannot call a non - constexpr function
 d.illegal, because the size does not account for the null character at the end
 
-//Exercise 3.28
-a. default initialization, ten empty strings in global space
-b. default initialization, ten Zeroes in global space
-* /
-int main() {
-	int sa[10];
-	for (auto i : sa)
-		cout << i << "";
+//Exerise 3.28
+int main()
+{
+		sa is default initialized string(empty strings).
+		ia is default initialized int with value of 0 (global variables) but the console shows other numbers
+		sa2 is default initialized strings(empty strings).
+		ia2 is default initialized int whose values are undefined(local variable)
+
+		for (auto i : ia)
+		std::cout << &i << "";
+
 }
+//Exercise 3.29
+ An array is fixed and cannot change size. An array  cannot be initialized as a copy of another array.
+ It's also illegal to assign one array to another.'
+
+//Exercise 3.30
+int main() {
+	constexpr size_t array_size = 10;
+	int ia[array_size];
+	for (size_t ix = 1; ix <= array_size; ++ix)
+		ia[ix] = ix;
+}
+ The indexing error is the for loop starts with 1 instead of 0(the true first element) and the
+ loop runs until equal to array_size which is 10. The last element in this array is 9.
+
+//Exercise 3.31
+
+int main() {
+	constexpr size_t array_size = 10;
+	int ia[array_size];
+	for (size_t ix = 0; ix < array_size; ++ix)
+		ia[ix] = ix;
+	for (auto i : ia)
+		std::cout << i << " ";
+}
+//Why do they use ++ix instead of ix++
+
+//Exercise 3.32
+
+int main() {
+	//Copy Arrays
+	constexpr size_t array_size = 10;
+	int ia[array_size];
+	for (size_t ix = 0; ix < array_size; ++ix)
+		ia[ix] = ix;
+	constexpr size_t array_size2 = array_size;
+	int ia2[array_size2];
+	for (size_t ix2 = 0; ix2 < array_size2; ++ix2)
+		ia2[ix2] = ia[ix2];
+	for (auto i : ia2)
+		std::cout << i << " ";
+
+	//Copy Vectors
+	std::vector<int> ivec1;
+	for (decltype(ivec1.size()) ix = 0; ix < array_size; ++ix)
+		ivec1.push_back(ix);
+	std::vector<int> ivec2(ivec1);
+	for (auto i : ivec2)
+		std::cout << i << " ";
+}
+//Exercise 3.33
+
+int main() {
+	unsigned scores[11]; // 11 buckets, all value initialized to 0
+	unsigned grade;
+	while (std::cin >> grade) {
+		if (grade <= 100)
+			++scores[grade / 10]; // increment the counter for the current cluster
+	}
+
+	for (auto i : scores)
+		std::cout << i << " ";
+
+	if the array was not initialized, the default values would be 3435973836 3435973836
+	3435973836 3435973836 3435973836 3435973836 3435973836 3435973836 3435973836 3435973836 3435973836
+	which is 0-1 which gives the highest number for an unsigned int??
+
+	This might have something to do with pointers where it points to memory address.
+
+	In C++ pointers and arrays are closely intertwined. In particular, as we’ll see, when
+	we use an array, the compiler ordinarily converts the array to a pointer.
+}
+*/
+//Exercise 3.34

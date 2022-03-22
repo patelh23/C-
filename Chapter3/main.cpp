@@ -366,20 +366,28 @@ c.illegal, cannot call a non - constexpr function
 d.illegal, because the size does not account for the null character at the end
 
 //Exerise 3.28
-int main()
-{
-		sa is default initialized string(empty strings).
-		ia is default initialized int with value of 0 (global variables) but the console shows other numbers
-		sa2 is default initialized strings(empty strings).
-		ia2 is default initialized int whose values are undefined(local variable)
 
-		for (auto i : ia)
-		std::cout << &i << "";
+string sa[10];
+int ia[10];
+int main() {
+	string sa2[10]; int ia2[10];
+	for (auto i : ia2)
+		cout << i << endl;
+
+}
+
+sa is default initialized string(empty strings).
+ia is default initialized int with value of 0 (global variables)
+sa2 is default initialized strings(empty strings).
+ia2 is default initialized int whose values are from a random memory(local variable)
+
+for (auto i : ia)
+std::cout << &i << "";
 
 }
 //Exercise 3.29
- An array is fixed and cannot change size. An array  cannot be initialized as a copy of another array.
- It's also illegal to assign one array to another.'
+An array is fixedand cannot change size.An array  cannot be initialized as a copy of another array.
+It's also illegal to assign one array to another.'
 
 //Exercise 3.30
 int main() {
@@ -388,8 +396,8 @@ int main() {
 	for (size_t ix = 1; ix <= array_size; ++ix)
 		ia[ix] = ix;
 }
- The indexing error is the for loop starts with 1 instead of 0(the true first element) and the
- loop runs until equal to array_size which is 10. The last element in this array is 9.
+The indexing error is the for loop starts with 1 instead of 0(the true first element) and the
+loop runs until equal to array_size which is 10. The last element in this array is 9.
 
 //Exercise 3.31
 
@@ -439,14 +447,8 @@ int main() {
 	for (auto i : scores)
 		std::cout << i << " ";
 
-	if the array was not initialized, the default values would be 3435973836 3435973836
-	3435973836 3435973836 3435973836 3435973836 3435973836 3435973836 3435973836 3435973836 3435973836
-	which is 0-1 which gives the highest number for an unsigned int??
+//if the array was not initialized, the default values will be a
+//value in a random memory allocation
 
-	This might have something to do with pointers where it points to memory address.
-
-	In C++ pointers and arrays are closely intertwined. In particular, as we’ll see, when
-	we use an array, the compiler ordinarily converts the array to a pointer.
-}
-*/
+	
 //Exercise 3.34

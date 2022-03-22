@@ -296,6 +296,19 @@ int main() {
 	}
 }
 
+//Exercise 3.22
+int main() {
+	vector<string> text = { "hello my name is gustavo, but you can call me sus.","","I'm starting to think that we have an imposter amungus." };
+	for (auto it = text
+		.begin(); it != text.end() && !it->empty(); ++it) {
+		for (auto& letter : *it) {
+			letter = toupper(letter);
+		}
+		cout << *it << endl;
+	}
+}
+
+
 //Exercise 3.23
 int main() {
 	vector<int> list1 = { 1,2,3,4,5,6,7,8,9,10 };
@@ -305,7 +318,7 @@ int main() {
 		cout << *it << " ";
 	}
 }
-*/
+
 //Exercise 3.24
 int main() {
 
@@ -341,16 +354,23 @@ int main() {
 	for (auto i : scores)
 		cout << i;
 }
+
 //Exercise 3.26
 Because the result of adding two iterators is undefined.
 Subtracting two iterators will give a distance in the form of an integral number.
+
+//Exercise 3.27
+a.error because ia is not a const expression
+b. this is legal, subscript is a constexpr evaluated at compile - time
+c.illegal, cannot call a non - constexpr function
+d.illegal, because the size does not account for the null character at the end
+
+//Exercise 3.28
+a. default initialization, ten empty strings in global space
+b. default initialization, ten Zeroes in global space
 * /
 int main() {
-
-	int parr[9] = { 0,2 };
-
-	for (auto i : parr) {
-		cout << " " << i;
-	}
+	int sa[10];
+	for (auto i : sa)
+		cout << i << "";
 }
-

@@ -447,8 +447,33 @@ int main() {
 	for (auto i : scores)
 		std::cout << i << " ";
 
-//if the array was not initialized, the default values will be a
-//value in a random memory allocation
+	if the array was not initialized, the default values will be a
+		value in a random memory allocation
 
-	
-//Exercise 3.34
+
+		//Exercise 3.34
+
+		Given that p1and p2 point to elements in the same array,
+		what does the following code do ? Are there values of p1 or p2 that make
+		this code illegal ?
+		p1 += p2 - p1;
+
+	This assigns p1 to equal p2.The p2 - p1 gives the distance between elements in the array.Then it gets added to p1 to move it to position p2.
+		This is legal if p2 is greater than or equal to p1.Also, both pointers cannot be before the first element or 1 past the last element.
+
+		//Exercise 3.35
+
+
+		int main() {
+		int ia[] = { 0,2,4,6,8 };
+		int* ibeg = begin(ia), * iend = end(ia);
+		while (ibeg != iend) {
+			*ibeg = 0;
+			cout << *ibeg;
+			++ibeg;
+		}
+	}
+	*/
+
+		Exercise 3.36: Write a program to compare two arrays for equality.Write a
+		similar program to compare two vectors.

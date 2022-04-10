@@ -477,3 +477,18 @@ int main() {
 
 		Exercise 3.36: Write a program to compare two arrays for equality.Write a
 		similar program to compare two vectors.
+		* /
+		int main() {
+		int counter = 0;
+		int ia[] = { 0,2,4,6,8 };
+		int ia2[] = { 0,2,4,6,8 };
+		int* iabeg = begin(ia), * ia2beg = begin(ia2), * iaend = end(ia), * ia2end = end(ia);
+		while (iabeg != iaend) {
+			if (*(iabeg + counter) == *(ia2beg + counter))
+				++counter;
+			else {
+				iabeg = iaend;
+				cout << "they are not equal in Element " << counter << " of array";
+			}
+		}
+	}

@@ -489,6 +489,8 @@ int main() {
 			else {
 				iabeg = iaend;
 				cout << "they are not equal in Element " << counter << " of array";
+
+		when they are equal, it gives a funky error.
 			}
 		}
 	}

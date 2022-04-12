@@ -509,3 +509,35 @@ int main() {
 			cout << "vectors are equal";
 
 	}
+	Exercise 3.37
+		int main() {
+		const char ca[] = { 'h', 'e', 'l', 'l', 'o' };
+		const char* cp = ca;
+		while (*cp) {
+			cout << *cp << endl;
+			++cp;
+		}
+	}
+
+	// this code will print the array of chars and then look for a null character, 
+	// accessing the next memory address till it finds it.
+
+
+	Exercise 3.38
+		//Pointers hold a memory location. Adding 2 memory locations will result in undefined behavior.
+
+	Exercise 3.39
+	* /
+	int main() {
+
+	string string1 = "hello";
+	string string2 = "hello";
+
+	cout << (string1 == string2 ? "equal" : "not equal") << endl;
+
+
+	const char cal1[] = { 'h', 'e', 'l', 'l', 'o', '\0' };
+	const char cal2[] = { 'h', 'e', 'l', 'l', 'o', '\0' };
+	cout << (strcmp(cal1, cal2) ? "not equal" : "equal");
+
+}

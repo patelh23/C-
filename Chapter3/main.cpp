@@ -497,3 +497,15 @@ int main() {
 			cout << "they are not equal arrays";
 
 	}
+	//compare 2 vectors
+	*/
+		int main() {
+		vector<int> ivec1{ 0, 1, 2, 3, 3 };
+		vector<int> ivec2{ 0, 1, 2, 3, 5 };
+
+		if (ivec1 != ivec2)
+			cout << "not equal vectors";
+		else
+			cout << "vectors are equal";
+
+	}

@@ -479,18 +479,21 @@ int main() {
 		similar program to compare two vectors.
 		* /
 		int main() {
-		int counter = 0;
-		int ia[] = { 0,2,4,6,8 };
-		int ia2[] = { 0,2,4,6,8 };
-		int* iabeg = begin(ia), * ia2beg = begin(ia2), * iaend = end(ia), * ia2end = end(ia);
-		while (iabeg != iaend) {
-			if (*(iabeg + counter) == *(ia2beg + counter))
-				++counter;
-			else {
-				iabeg = iaend;
-				cout << "they are not equal in Element " << counter << " of array";
 
-		when they are equal, it gives a funky error.
-			}
+		int ia[] = { 0,2,4,6,5, 10 };
+		int ia2[] = { 0,2,4,6 };
+		int* iabeg = begin(ia), * ia2beg = begin(ia2), * iaend = end(ia), * ia2end = end(ia2);
+
+		while (iabeg != iaend) {
+			if (*(iabeg) != *(ia2beg))
+				break;
+			++iabeg;
+			++ia2beg;
 		}
+
+		if (iabeg == iaend && ia2beg == ia2end)
+			cout << "they are equal arrays";
+		else
+			cout << "they are not equal arrays";
+
 	}

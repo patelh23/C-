@@ -541,3 +541,23 @@ int main() {
 	cout << (strcmp(cal1, cal2) ? "not equal" : "equal");
 
 }
+	Exercise 3.40
+
+		int main() {
+		char cal1[] = "hello";
+		char cal2[] = "you";
+		constexpr auto size = sizeof(cal1) + sizeof(cal2) - 1;
+		char combine[size];
+		strcpy_s(combine, cal1);
+		strcat_s(combine, cal2);
+
+		cout << combine;
+	}
+	Exercise 3.41
+		* /
+		int main() {
+		int arr[] = { 0,1,2,3,4 };
+		vector<int> ivec(begin(arr), end(arr));
+		for (auto& i : ivec)
+			cout << &i << " ";
+	}

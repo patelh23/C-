@@ -561,3 +561,22 @@ int main() {
 		for (auto& i : ivec)
 			cout << &i << " ";
 	}
+	Exercise 3.42
+		int main() {
+
+		constexpr size_t size = 10;
+		vector<int> ivec(size);
+		int counter = 1;
+		for (decltype(ivec.size()) i = 0; i < ivec.size(); i++) {
+			ivec[i] = i;
+			cout << i;
+		}
+
+		int a[size];
+		for (auto i2 : ivec)
+			a[i2] = ivec[i2];
+
+		for (const auto& i3 : a)
+			cout << "" << i3;
+
+	}

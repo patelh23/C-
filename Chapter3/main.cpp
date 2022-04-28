@@ -601,9 +601,10 @@ int main() {
 				int* q = *p; q != *p + 4; ++q)
 				cout << *q;
 	}
+	
 	//Exercise 3.44
 
-//using range for loop with type alias
+	//using range for loop with type alias
 	int main() {
 		int ia[3][4] = { { 0,1,2,3 }, { 4,5,6,7 }, { 8,9,10,11 } };
 		using int_array = int[4];
@@ -619,6 +620,25 @@ int main() {
 		//using for loop with pointers
 		for (int_array(*p) = ia; p != ia + 3; ++p)
 			for (int* q = *p; q != *p + 4; ++q)
+				cout << *q;
+	}
+	//Exercise 3.45
+	*/
+		int main() {
+		int ia[3][4] = { { 0,1,2,3 }, { 4,5,6,7 }, { 8,9,10,11 } };
+		//for range with auto
+		for (auto& row : ia)
+			for (int col : row)
+				cout << col;
+		cout << "\n";
+		//using for loop with subscripts
+		for (int i = 0; i != 3; ++i)
+			for (int j = 0; j != 4; ++j)
+				cout << ia[i][j];
+		cout << "\n";
+		//using for loop with pointers
+		for (auto p = ia; p != ia + 3; ++p)
+			for (auto q = *p; q != *p + 4; ++q)
 				cout << *q;
 	}
 

@@ -8,5 +8,5 @@ so it will be 200 / 2 = 100 + 5 = 105
 
 //Exercise 4.2
 a. * (vec.begin())
-b. (*(vec.begin())) + 1
+b. (*(vec.begin())) + 1 //member (.) first then begin() call then dereference then add 1
 

@@ -10,3 +10,11 @@ so it will be 200 / 2 = 100 + 5 = 105
 a. * (vec.begin())
 b. (*(vec.begin())) + 1 //member (.) first then begin() call then dereference then add 1
 
+//Exercise 4.3
+Order of evaluation for most of the binary operators is left
+undefined to give the compiler opportunities for optimization.This strategy
+presents a trade - off between efficient code generation and potential pitfalls in
+the use of the language by the programmer.Do you consider that an
+acceptable trade - off ? Why or why not?
+//It is acceptable trade-off because a good programmer can utilize this optimization.
+//Potential pitfalls can be fixed with static code analysis and other due diligence.

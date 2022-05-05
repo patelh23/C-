@@ -21,3 +21,23 @@ acceptable trade - off ? Why or why not?
 // logic of your program requires.
 // Potential pitfalls can be fixed with static code analysis and other due diligence.
 
+int main() {
+	/*
+	int i = 123;
+	int j = 10;
+	int k = -i * 3 + 3;
+	std::cout << "i is: " << i << endl;
+	std::cout << "j is: " << j << endl;
+	std::cout << "k is: " << k << endl;
+	*/
+
+	short short_value = 32767; // max value if shorts are 16 bits
+	short short_value2 = +short_value + 1; // this calculation overflows
+	short short_value3 = short_value + 1; // this calculation overflows
+	cout << "short_value: " << short_value << endl;
+	cout << "short_value2: " << short_value2 << endl;
+	cout << "short_value3: " << short_value3 << endl;
+	cout << "sizeof_value: " << sizeof(short_value) << endl;
+
+}
+

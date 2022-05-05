@@ -17,4 +17,6 @@ presents a trade - off between efficient code generation and potential pitfalls 
 the use of the language by the programmer.Do you consider that an
 acceptable trade - off ? Why or why not?
 //It is acceptable trade-off because a good programmer can utilize this optimization.
+// When in doubt, parenthesize expressions can be used to force the grouping that the
+// logic of your program requires.
 //Potential pitfalls can be fixed with static code analysis and other due diligence.

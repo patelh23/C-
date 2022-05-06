@@ -39,5 +39,8 @@ int main() {
 	cout << "short_value3: " << short_value3 << endl;
 	cout << "sizeof_value: " << sizeof(short_value) << endl;
 
+	//Exercise 4.4
+	cout << ((12 / 3) * 4) + (5 * 15) + ((24 % 4) / 2);
+
 }
 

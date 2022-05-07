@@ -40,7 +40,25 @@ int main() {
 	cout << "sizeof_value: " << sizeof(short_value) << endl;
 
 	//Exercise 4.4
-	cout << ((12 / 3) * 4) + (5 * 15) + ((24 % 4) / 2);
+	cout << ((12 / 3) * 4) + (5 * 15) + ((24 % 4) / 2); //91
+
+	//Exercise 4.5
+
+		//(a)-30 * 3 + 21 / 5       -90 + 4 = -86
+	cout << -30 * 3 + 21 / 5 << endl;
+	//(b)-30 + 3 * 21 / 5   // -30 + 63/5 = -18
+	cout << -30 + 3 * 21 / 5 << endl;
+	//(c)30 / 3 * 21 % 5    // 210 % 5 = 0
+	cout << 30 / 3 * 21 % 5 << endl;
+	//(d)-30 / 3 * 21 % 4   -10 * // -210 % 4 = -2
+	cout << -30 / 3 * 21 % 4 << endl;
+
+	//Exercise 4.6
+	int x = 5;
+	if (x % 2 == 0)
+		cout << "even";
+	else
+		cout << "odd";
 
 }
 

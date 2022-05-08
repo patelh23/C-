@@ -60,5 +60,26 @@ int main() {
 	else
 		cout << "odd";
 
+	//Exercise 4.7
+	What does overflow mean ?
+		Overflow is when the value of an object is outside the range of values
+		its data type can represent.
+		* /
+		short example1 = -32768;
+	example1 -= 1;
+	cout << "example1 : " << example1 << endl; //here you can see the overflow caused 
+									   //the negative to wrap and turn positive
+
+	long example2 = -2147483648;
+	example2 -= 1;
+	cout << "example2 : " << example2 << endl; //here you can see the overflow caused the long 
+									   //negative to wrap and turn positive
+
+	unsigned char example3 = 255;
+	example3 += 4;
+	cout << "example3 : " << example3; //here you can see the overflow caused 
+									   //the blank space to  wrap and turn into ASCI 3, a heart
+
+
 }
 

@@ -80,6 +80,16 @@ int main() {
 	cout << "example3 : " << example3; //here you can see the overflow caused 
 									   //the blank space to  wrap and turn into ASCI 3, a heart
 
+	Exercise 4.8: Explain when operands are evaluated in the logical AND, logical
+		OR, and equality operators.
 
+		The right hand operand is evaluated in the logical AND
+		operator only when the left hand operator is evaluated true
+
+		The right hand operand is evaluated in the logical OR
+		operators only when the left hand operator is evaluated false
+
+		The right hand operand is converted to match the left hand
+		operand in the equality operand?
 }
 

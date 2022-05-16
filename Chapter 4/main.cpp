@@ -83,7 +83,8 @@ int main() {
 	Exercise 4.8: Explain when operands are evaluated in the logical AND, logical
 		OR, and equality operators.
 
-		The right hand operand is evaluated in the logical AND
+		The right hand operand is evaluat
+		ed in the logical AND
 		operator only when the left hand operator is evaluated true
 
 		The right hand operand is evaluated in the logical OR
@@ -91,5 +92,13 @@ int main() {
 
 		The right hand operand is converted to match the left hand
 		operand in the equality operand?
+
+	Exercise 4.9
+		const char* cp = "hello";
+	if (cp != nullptr && *cp)
+		cout << *cp << " " << cp;
+
+	// *cp gives you h because the pointer will always point to the first element
+	// cp gives you the phrase hello
 }
 

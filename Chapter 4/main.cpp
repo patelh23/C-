@@ -99,6 +99,6 @@ int main() {
 		cout << *cp << " " << cp;
 
 	// *cp gives you h because the pointer will always point to the first element
-	// cp gives you the phrase hello
+	// cp gives you the phrase hello.
 }
 

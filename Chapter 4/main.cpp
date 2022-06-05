@@ -119,5 +119,6 @@ int main() {
 	int input;
 	while (cin >> input && input != 42)
 		cout << input << "\n";
+
 }
 

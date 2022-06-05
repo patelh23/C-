@@ -116,9 +116,8 @@ int main() {
 	Write the condition for a while loop that would read ints
 		from the standard inputand stop when the value read is equal to 42.
 
-		int input;
-	cin >> input;
-	while (input != 42)
-		cin >> input;
+	int input;
+	while (cin >> input && input != 42)
+		cout << input << "\n";
 }
 

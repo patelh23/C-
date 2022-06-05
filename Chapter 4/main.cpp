@@ -98,7 +98,27 @@ int main() {
 	if (cp != nullptr && *cp)
 		cout << *cp << " " << cp;
 
-	// *cp gives you h because the pointer will always point to the first element
+		// *cp gives you h because the pointer will always point to the first element
 	// cp gives you the phrase hello.
+
+	//Exercise 4.9
+	Explain the behavior of the condition in the following
+
+		const char* cp = "hello";
+	if (cp != nullptr && *cp)
+		cout << *cp << " " << cp;
+
+	// *cp gives you h because the pointer will always point to the first element
+	// cp gives you the phrase hello
+	// this is testing whether cp is a null pointer
+
+	//Exercise 4.10
+	Write the condition for a while loop that would read ints
+		from the standard inputand stop when the value read is equal to 42.
+
+		int input;
+	cin >> input;
+	while (input != 42)
+		cin >> input;
 }
 
